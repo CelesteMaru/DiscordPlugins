@@ -33,7 +33,7 @@ const React = BdApi.React,
 			buttonVisible: "iconsVisible",
 			hideElementsName: "hideIconElement",
 			forceWidth: "forceIconWidth",
-			animationTime: 325
+			animationTime: 0
 		}
 	}
 
@@ -163,6 +163,10 @@ module.exports = class HideChatIcons {
 	//Everytime we switch the chat window is reloaded;
 	//as a result we need to check and potentially render the button again.
 	onSwitch() {
+		this.channelAppLauncherclass = Webpack.getModule(Filters.byKeys("channelAppLauncher")).channelAppLauncher;
+		this.channelAppLauncher = document.querySelector(`.${this.channelAppLauncherclass}`);
+		this.channelAppLauncher.style.display="none";
+		
 		this.renderButton();
 
 		//And check if we need to toggle to keep it collapsed.
