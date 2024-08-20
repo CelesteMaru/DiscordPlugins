@@ -39,7 +39,6 @@ const React = BdApi.React,
 
 
 module.exports = class HideChatIcons {
-
 	load() {
 		// ZeresPluginLibrary is not a Requirement it should not throw an error when not finding it. At most it should log a warning.
 		if(global.ZeresPluginLibrary){
